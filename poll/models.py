@@ -4,7 +4,7 @@ class Poll(models.Model):
     id = models.AutoField(primary_key = True)
     title = models.CharField(blank = True, max_length = 255)
     message = models.TextField(blank = True)
-    select = models.IntegerField()
+    select = models.IntegerField(blank = True)
     type = models.IntegerField(blank = True)
     deadline = models.DateField(blank = True)
     created_date = models.DateField()
