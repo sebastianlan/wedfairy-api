@@ -1,11 +1,15 @@
-from rest_framework import viewsets, throttling
+from rest_framework import viewsets, throttling, mixins
 from map.models import Map
 from map.serializers import MapSerializer
+from map.permissions import IsAppAuthorized
+
 
 class OncePerSecUserThrottle(throttling.UserRateThrottle):
         rate = '1/second'
 
-class MapViewSet(viewsets.ModelViewSet):
+
+class MapViewSet(mixins.CreateModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
     queryset = Map.objects.all()
     serializer_class = MapSerializer
-    throttle_class = OncePerSecUserThrottle
+    throttle_classes = [OncePerSecUserThrottle]
+    permission_classes = [IsAppAuthorized]

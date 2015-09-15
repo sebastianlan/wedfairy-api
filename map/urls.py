@@ -1,5 +1,4 @@
 from django.conf.urls import url, patterns, include
-from django.conf.urls import url, patterns, include
 from rest_framework.routers import DefaultRouter
 from map import views
 

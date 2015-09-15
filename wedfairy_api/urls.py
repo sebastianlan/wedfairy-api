@@ -22,7 +22,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^rsvp/', include('rsvp.urls')),
-    url(r'^map/', include('map.urls')),
-    url(r'^poll/', include('poll.urls')),
+    url(r'^rsvps/', include('rsvp.urls')),
+    url(r'^maps/', include('map.urls')),
+    url(r'^polls/', include('poll.urls')),
 ]
