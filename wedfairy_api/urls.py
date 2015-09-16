@@ -20,9 +20,9 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^rsvps/', include('rsvp.urls')),
-    url(r'^maps/', include('map.urls')),
-    url(r'^polls/', include('poll.urls')),
+    url(r'^api/admin/', include(admin.site.urls)),
+    url(r'^api/api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api/rsvps/', include('rsvp.urls')),
+    url(r'^api/maps/', include('map.urls')),
+    url(r'^api/polls/', include('poll.urls')),
 ]
