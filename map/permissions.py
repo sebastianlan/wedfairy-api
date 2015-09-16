@@ -11,7 +11,7 @@ class IsAppAuthorized(permissions.BasePermission):
         token = request.query_params.get('token')
         # print pk, app, token
         r = requests.post('http://api.wedfairy.com/api/appstore/authorize/',
-                          data={'id': pk, 'token': token, 'app': app})
+                          data={'id': pk, 'app': app, 'token': token})
         if r.status_code == 200:
             return True
         else:

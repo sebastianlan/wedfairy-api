@@ -11,5 +11,5 @@ class OncePerSecUserThrottle(throttling.UserRateThrottle):
 class MapViewSet(mixins.CreateModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
     queryset = Map.objects.all()
     serializer_class = MapSerializer
-    throttle_classes = [OncePerSecUserThrottle]
+    # throttle_classes = [OncePerSecUserThrottle]
     permission_classes = [IsAppAuthorized]

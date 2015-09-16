@@ -9,8 +9,7 @@ class PollSerializer(serializers.ModelSerializer):
 
 
 class OptionSerializer(serializers.ModelSerializer):
-    pos = serializers.IntegerField(required=True)
-
+    # pos = serializers.IntegerField(required=True)
     class Meta:
         model = Option
         fields = ('id', 'poll', 'pos', 'content')
