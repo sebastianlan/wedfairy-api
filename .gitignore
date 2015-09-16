@@ -54,4 +54,11 @@ coverage.xml
 docs/_build/
 
 # PyBuilder
-target/
+target
+
+# Virtualenv
+venv
+
+# Local settings
+wedfairy_api/settings_local.py
+
