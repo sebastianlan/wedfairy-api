@@ -18,6 +18,7 @@ class Guest(models.Model):
     avatar = models.CharField(max_length=255)
     name = models.CharField(max_length=50)
     people = models.IntegerField()
+    mobile = models.CharField(max_length=20)
     created_date = models.DateField(auto_now_add=True)
 
     class Meta:

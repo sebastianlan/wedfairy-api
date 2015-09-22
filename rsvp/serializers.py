@@ -11,7 +11,7 @@ class RsvpSerializer(serializers.ModelSerializer):
 class GuestSerializer(serializers.ModelSerializer):
     class Meta:
         model = Guest
-        fields = ('id', 'rsvp', 'avatar', 'name', 'people', 'created_date')
+        fields = ('id', 'rsvp', 'avatar', 'name', 'people', 'mobile', 'created_date')
 
 
 
