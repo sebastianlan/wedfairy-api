@@ -16,7 +16,7 @@ class HundredPerMinUserThrottle(throttling.UserRateThrottle):
 class PollViewSet(mixins.CreateModelMixin, mixins.RetrieveModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
     queryset = Poll.objects.all()
     serializer_class = PollSerializer
-    throttle_classes = [OncePerSecUserThrottle]
+    # throttle_classes = [OncePerSecUserThrottle]
     permission_classes = [IsAppAuthorized_poll]
 
     @decorators.detail_route(methods=['GET'])
