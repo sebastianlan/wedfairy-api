@@ -32,7 +32,7 @@ class PollViewSet(mixins.CreateModelMixin, mixins.RetrieveModelMixin, mixins.Upd
         return Response(serializer.data)
 
 
-class OptionViewSet(mixins.CreateModelMixin, mixins.UpdateModelMixin, viewsets.GenericViewSet):
+class OptionViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = Option.objects.all()
     serializer_class = OptionSerializer
     # throttle_classes = [HundredPerMinUserThrottle]
