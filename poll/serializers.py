@@ -28,4 +28,4 @@ class OptionSerializer(serializers.ModelSerializer):
 class VoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vote
-        fields = ('id', 'poll', 'option', 'avatar', 'name', 'created_date')
+        fields = ('id', 'poll', 'option', 'user_id', 'avatar', 'name', 'created_date')

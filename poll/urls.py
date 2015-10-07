@@ -10,4 +10,5 @@ router.register(r'vote', views.VoteViewSet)
 urlpatterns = patterns('',
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^poll/(?P<poll>[a-z0-9]+)/voted/(?P<user>[a-z0-9]+)/$', views.poll_voted),
 )

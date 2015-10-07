@@ -1,4 +1,5 @@
 from rest_framework import viewsets, decorators, throttling, mixins
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from poll.models import Poll, Option, Vote
 from poll.serializers import PollSerializer, OptionSerializer, VoteSerializer
@@ -48,3 +49,10 @@ class OptionViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
 class VoteViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = Vote.objects.all()
     serializer_class = VoteSerializer
+
+
+@api_view(['GET'])
+def poll_voted(request, poll, user):
+    queryset = Vote.objects.filter(poll=poll,user_id=user)
+    serializer = VoteSerializer(queryset, many=True)
+    return Response(serializer.data)

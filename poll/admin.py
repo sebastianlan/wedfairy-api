@@ -14,4 +14,4 @@ class OptionAdmin(admin.ModelAdmin):
 
 @admin.register(models.Vote)
 class VoteAdmin(admin.ModelAdmin):
-    list_display = ['id', 'poll', 'option', 'avatar', 'name', 'created_date']
+    list_display = ['id', 'poll', 'option', 'user_id', 'avatar', 'name', 'created_date']

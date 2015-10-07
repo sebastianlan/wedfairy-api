@@ -29,6 +29,7 @@ class Vote(models.Model):
     id = models.AutoField(primary_key=True)
     poll = models.ForeignKey(Poll)
     option = models.ForeignKey(Option)
+    user_id = models.IntegerField()
     avatar = models.CharField(max_length=255)
     name = models.CharField(max_length=50)
     created_date = models.DateField(auto_now_add=True)
