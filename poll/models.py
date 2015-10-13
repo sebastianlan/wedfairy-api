@@ -23,6 +23,8 @@ class Option(models.Model):
 
     class Meta:
         db_table = 'option'
+        ordering = ['pos']
+        index_together = (('poll', 'pos'),)
 
 
 class Vote(models.Model):
