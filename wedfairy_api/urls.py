@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^api/rsvps/', include('rsvp.urls')),
     url(r'^api/maps/', include('map.urls')),
     url(r'^api/polls/', include('poll.urls')),
+    url(r'^api/aidaijia_coupons/', include('aidaijia_coupon.urls')),
 ]
