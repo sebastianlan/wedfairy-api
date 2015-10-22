@@ -11,18 +11,14 @@ class Poll(models.Model):
     created_date = models.DateField(auto_now_add=True)
     changed_date = models.DateField(auto_now=True)
 
-    class Meta:
-        db_table = 'poll'
-
 
 class Option(models.Model):
     id = models.AutoField(primary_key=True)
     poll = models.ForeignKey(Poll)
     pos = models.IntegerField()
     content = models.CharField(blank=True, null=True, max_length=255)
-
+    
     class Meta:
-        db_table = 'option'
         ordering = ['pos']
         index_together = (('poll', 'pos'),)
 
@@ -35,7 +31,4 @@ class Vote(models.Model):
     avatar = models.CharField(max_length=255)
     name = models.CharField(max_length=50)
     created_date = models.DateField(auto_now_add=True)
-
-    class Meta:
-        db_table = 'vote'
 

@@ -49,7 +49,8 @@ INSTALLED_APPS = (
     'rest_framework',
     'rsvp',
     'map',
-    'poll'
+    'poll',
+    'aidaijia_coupon'
 )
 
 MIDDLEWARE_CLASSES = (

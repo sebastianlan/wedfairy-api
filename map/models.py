@@ -11,5 +11,3 @@ class Map(models.Model):
     created_date = models.DateField(auto_now_add=True)
     changed_date = models.DateField(auto_now=True)
 
-    class Meta:
-        db_table = 'map'

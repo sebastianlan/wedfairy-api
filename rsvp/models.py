@@ -8,9 +8,6 @@ class Rsvp(models.Model):
     created_date = models.DateField(auto_now_add=True)
     changed_date = models.DateField(auto_now=True)
 
-    class Meta:
-        db_table = 'rsvp'
-
 
 class Guest(models.Model):
     id = models.AutoField(primary_key=True)
@@ -20,7 +17,4 @@ class Guest(models.Model):
     people = models.IntegerField()
     mobile = models.CharField(max_length=20)
     created_date = models.DateField(auto_now_add=True)
-
-    class Meta:
-        db_table = 'guest'
 
